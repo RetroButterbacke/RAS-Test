@@ -26,12 +26,12 @@ p:
   float p = 0;
   printf("Type in p:\n");
   scanf("%f", &p);
-  if (!isPrime(p)) { printf("Not a Prime\n"); e = 0; goto p; }
+  if (!isPrime(p)) { printf("Not a Prime\n"); goto p; }
 q:
   float q = 0; 
   printf("Type in q:\n");
   scanf("%f", &q);
-  if (!isPrime(q)) { printf("Not a Prime\n"); q = 0; goto q; }
+  if (!isPrime(q)) { printf("Not a Prime\n"); goto q; }
 
   float N = p*q;
   float d = ((p-1)*(q-1));
