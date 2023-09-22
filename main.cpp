@@ -1,5 +1,7 @@
+#include <bits/stdc++.h>
 #include <cstdio>
 #include <cmath>
+#include <unistd.h>
 
 bool isPrime(int n)
 {
@@ -41,5 +43,6 @@ q:
     } else d /= e;
   } else d /= e;
   printf("public key: %d %d\nprivate key: %d %d\n", (int)e, (int) N, (int)d, (int)N);
+  sleep(5);
   return 0;
 }
