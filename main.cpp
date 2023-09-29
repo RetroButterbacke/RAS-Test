@@ -3,14 +3,14 @@
 #include <cmath>
 #include <unistd.h>
 
-bool isPrime(float n)
+bool isPrime(int n)
 {
     // Corner case
-    if (n <= 0.1f)
+    if (n <= 1f)
         return false;
     // Check from 2 to n-1
     for (int i = 2; i <= n / 2; i++)
-        if (std::fmod(n, i) == 0)
+        if (n % i == 0)
             return false; 
     return true;
 }
@@ -18,17 +18,17 @@ bool isPrime(float n)
 int main () {
 
 e:
-  float e = 0;
+  int e = 0;
   printf("Type in e:\n");
   scanf("%f", &e);
   if (!isPrime(e)) { printf("Not a Prime\n"); goto e; }
 p:
-  float p = 0;
+  int p = 0;
   printf("Type in p:\n");
   scanf("%f", &p);
   if (!isPrime(p)) { printf("Not a Prime\n"); goto p; }
 q:
-  float q = 0; 
+  int q = 0; 
   printf("Type in q:\n");
   scanf("%f", &q);
   if (!isPrime(q)) { printf("Not a Prime\n"); goto q; }
@@ -42,6 +42,7 @@ q:
       return 0;
     } else d /= e;
   } else d /= e;
+  if (fmod(d, 1.0) != 0.0) return 0;
   printf("public key: %d %d\nprivate key: %d %d\n", (int)e, (int) N, (int)d, (int)N);
   sleep(5);
   return 0;
