@@ -1,4 +1,3 @@
-#include <bits/stdc++.h>
 #include <cstdio>
 #include <cmath>
 #include <unistd.h>
@@ -6,7 +5,7 @@
 bool isPrime(int n)
 {
     // Corner case
-    if (n <= 1)
+    if (n <= 1 || n == 2)
         return false;
     // Check from 2 to n-1
     for (int i = 2; i <= n / 2; i++)
@@ -41,7 +40,7 @@ q:
   } else d /= e;
 
   if (std::fmod(e*d, ((p-1)*(q-1))) != 1.0f) {
-    printf("Something went wrong.:\(");
+    printf("Something went wrong.:\(\n");
     return 0;
   }
 
